@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #241538, #050816);
+    color: #f8f5ff;
+}
+
+.chatbruti-root {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chatbruti-header {
+    text-align: center;
+}
+
+.chatbruti-header h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.chatbruti-header p {
+    opacity: 0.8;
+}
+
+.chatbruti-main {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 1.4fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.chatbruti-chat {
+    background: rgba(13, 9, 31, 0.9);
+    border-radius: 1.4rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+}
+
+.chatbruti-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-height: 70vh;
+}
+
+.chatbruti-message {
+    display: flex;
+}
+
+.chatbruti-message-user {
+    justify-content: flex-end;
+}
+
+.chatbruti-message-bot {
+    justify-content: flex-start;
+}
+
+.chatbruti-bubble {
+    max-width: 80%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 1.1rem;
+    font-size: 0.96rem;
+    line-height: 1.35;
+}
+
+.chatbruti-message-user .chatbruti-bubble {
+    background: linear-gradient(135deg, #ff8ba7, #ff5c7a);
+    color: #1a0710;
+    border-bottom-right-radius: 0.2rem;
+}
+
+.chatbruti-message-bot .chatbruti-bubble {
+    background: rgba(54, 43, 99, 0.9);
+    border-bottom-left-radius: 0.2rem;
+}
+
+.chatbruti-typing {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.chatbruti-input-row {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.3rem;
+}
+
+.chatbruti-input-row input {
+    flex: 1;
+    padding: 0.7rem 0.9rem;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background: rgba(22, 16, 48, 0.95);
+    color: #f8f5ff;
+}
+
+.chatbruti-input-row input::placeholder {
+    color: #9e8fd1;
+}
+
+.chatbruti-input-row button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.7rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffd56f, #ff9f40);
+    color: #2b1104;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.chatbruti-input-row button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.chatbruti-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chatbruti-card {
+    background: rgba(13, 9, 31, 0.92);
+    border-radius: 1.2rem;
+    padding: 1rem 1.1rem;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+}
+
+.chatbruti-card h2,
+.chatbruti-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+}
+
+.chatbruti-card ul {
+    margin: 0.2rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.92rem;
+    opacity: 0.9;
+}
+
+.chatbruti-quote {
+    margin-top: 0.8rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+@media (max-width: 840px) {
+    .chatbruti-main {
+        grid-template-columns: 1fr;
+    }
+}
